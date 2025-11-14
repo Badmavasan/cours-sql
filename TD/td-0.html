@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>td-revision</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">TD de Révision SQL - TechShop Database</h1>
+
+<h3 id="toc_1">Pré-requis</h3>
+
+<p>Ce TD nécessite uniquement la connaissance des concepts suivants :</p>
+
+<ul>
+<li>SELECT, FROM, WHERE</li>
+<li>Jointures (INNER JOIN, LEFT JOIN, RIGHT JOIN)</li>
+<li>UNION et UNION ALL</li>
+<li>UPDATE et DELETE</li>
+<li>ORDER BY</li>
+<li>Sous-requêtes simples</li>
+</ul>
+
+<p>Ce TD nécessite également de la base des données <em>TechShop</em>.</p>
+
+<h2 id="toc_2">A.Requêtes Simples</h2>
+
+<p>A1. Listez tous les produits dont le prix est supérieur à 500€.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>price</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>1429.99</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>989.99</td>
+</tr>
+<tr>
+<td>4K TV</td>
+<td>699.99</td>
+</tr>
+</tbody>
+</table>
+
+<p>A2. Trouvez les clients qui ont un niveau de fidélité &#39;Gold&#39; et qui ont visité le magasin après le 1er octobre 2023.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>loyalty_level</th>
+<th>last_visit</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Jane Smith</td>
+<td>Gold</td>
+<td>2023-10-01 14:10:00</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>Gold</td>
+<td>2023-10-15 12:10:00</td>
+</tr>
+</tbody>
+</table>
+
+<p>A3. Listez tous les tickets de support avec statut &#39;Open&#39;.</p>
+
+<table>
+<thead>
+<tr>
+<th>ticket_id</th>
+<th>subject</th>
+<th>status</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Issue with Gaming Laptop</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Delivery delayed</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Bluetooth speaker sound issue</td>
+<td>Open</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Warranty question</td>
+<td>Open</td>
+</tr>
+</tbody>
+</table>
+
+<p>A4. Trouvez tous les produits de la catégorie &#39;Electronics&#39; avec leur prix.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>price</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>1429.99</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>989.99</td>
+</tr>
+<tr>
+<td>Tablet Pro</td>
+<td>499.99</td>
+</tr>
+</tbody>
+</table>
+
+<p>A5. Affichez les clients qui n&#39;ont pas fait de visite depuis le 1er septembre 2023.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>last_visit</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Mike Jones</td>
+<td>2023-08-22 09:00:00</td>
+</tr>
+<tr>
+<td>Paul Green</td>
+<td>2023-06-25 11:40:00</td>
+</tr>
+<tr>
+<td>Amy White</td>
+<td>2023-05-13 17:55:00</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>2023-04-20 18:05:00</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+
+<p>A6. Listez les fournisseurs dont le numéro de téléphone commence par &#39;555&#39;.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>phone</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>RetroFun</td>
+<td>555-123-4567</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>555-666-7777</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">B. Jointures Simples</h2>
+
+<p>B1. Pour chaque commande, affichez le nom du client qui l&#39;a passée.</p>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>order_name</th>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>9</td>
+<td>2023-10-21 12:35:00</td>
+<td>Tom Harris</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2023-10-20 11:10:00</td>
+<td>Lisa Brown</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2023-10-15 14:30:00</td>
+<td>John Doe</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2023-10-14 09:45:00</td>
+<td>Jane Smith</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2023-10-11 13:25:00</td>
+<td>Paul Green</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2023-09-12 12:00:00</td>
+<td>Amy White</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2023-09-10 16:15:00</td>
+<td>Mike Jones</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2023-09-10 15:15:00</td>
+<td>Linda Thomas</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2023-08-22 09:55:00</td>
+<td>Mark Davis</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2023-07-10 10:45:00</td>
+<td>Sara Wilson</td>
+</tr>
+</tbody>
+</table>
+
+<p>B2. Trouvez le nom et le prix des produits qui ont reçu un avis 5 étoiles.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>price</th>
+<th>rating</th>
+<th>comment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>1429.99</td>
+<td>5</td>
+<td>Amazing product, highly recommended!</td>
+</tr>
+<tr>
+<td>Retro Console</td>
+<td>219.99</td>
+<td>5</td>
+<td>Classic experience! Love it.</td>
+</tr>
+<tr>
+<td>Tablet Pro</td>
+<td>499.99</td>
+<td>5</td>
+<td>Perfect for entertainment.</td>
+</tr>
+<tr>
+<td>Smart Home Hub</td>
+<td>129.99</td>
+<td>5</td>
+<td>Works flawlessly with all my devices.</td>
+</tr>
+</tbody>
+</table>
+
+<p>B3. Affichez le nom des clients qui ont une adresse de livraison par défaut.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>123 Elm Street, Cityville</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>456 Oak Avenue, Townsville</td>
+</tr>
+<tr>
+<td>Lisa Brown</td>
+<td>321 Maple Drive, Lakeview</td>
+</tr>
+<tr>
+<td>Paul Green</td>
+<td>654 Cedar Avenue, Hometown</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>456 Spruce Street, Valley City</td>
+</tr>
+<tr>
+<td>Sara Wilson</td>
+<td>321 Aspen Way, Riverside</td>
+</tr>
+<tr>
+<td>Tom Harris</td>
+<td>789 Willow Lane, Greenfield</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>456 Fir Avenue, Beachtown</td>
+</tr>
+<tr>
+<td>John Doe</td>
+<td>123 Elm Street, Cityville</td>
+</tr>
+</tbody>
+</table>
+
+<p>B4. Listez les produits et leur fournisseur.</p>
+
+<table>
+<thead>
+<tr>
+<th>product_name</th>
+<th>supplier_name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>TechCorp</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>GadgetHouse</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>GadgetHouse</td>
+</tr>
+<tr>
+<td>Retro Console</td>
+<td>RetroFun</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>RetroFun</td>
+</tr>
+<tr>
+<td>Wireless Earbuds</td>
+<td>ElectroWorld</td>
+</tr>
+<tr>
+<td>Micropohone Studio USB</td>
+<td>ElectroWorld</td>
+</tr>
+<tr>
+<td>Smartwatch</td>
+<td>PowerUp</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>PowerUp</td>
+</tr>
+<tr>
+<td>Tablet Pro</td>
+<td>ComputeHub</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>ComputeHub</td>
+</tr>
+<tr>
+<td>4K TV</td>
+<td>GizmoDepot</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>GizmoDepot</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>DeviceCenter</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>Techies</td>
+</tr>
+<tr>
+<td>Smart Home Hub</td>
+<td>BestDevices</td>
+</tr>
+</tbody>
+</table>
+
+<p>B5. Trouvez toutes les commandes et leurs éléments (nom du produit, quantité).</p>
+
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>product_name</th>
+<th>quantity</th>
+<th>price<em>at</em>time</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Gaming Laptop</td>
+<td>1</td>
+<td>1429.99</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Smartphone Pro</td>
+<td>1</td>
+<td>989.99</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Retro Console</td>
+<td>1</td>
+<td>219.99</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Wireless Earbuds</td>
+<td>1</td>
+<td>149.99</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Smartwatch</td>
+<td>1</td>
+<td>249.99</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tablet Pro</td>
+<td>1</td>
+<td>499.99</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4K TV</td>
+<td>1</td>
+<td>699.99</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Gaming Keyboard</td>
+<td>1</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Bluetooth Speaker</td>
+<td>1</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Smart Home Hub</td>
+<td>1</td>
+<td>129.99</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_4">C. Produits Cartésiens et CROSS JOIN</h2>
+
+<p>C1. Créez une liste de tous les couples possibles de produits de la même catégorie.</p>
+
+<table>
+<thead>
+<tr>
+<th>product_1</th>
+<th>product_2</th>
+<th>categorie</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>Smartphone Pro</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>Gaming Laptop</td>
+<td>Tablet Pro</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>Tablet Pro</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>Wireless Earbuds</td>
+<td>Bluetooth Speaker</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Wireless Earbuds</td>
+<td>Casque Gaming Pro X</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Wireless Earbuds</td>
+<td>Microphone Studio USB</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>Souris Optique 4000dpi</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>Webcam HD Pro</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>Clavier Rétroéclairé</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>Tapis de Souris XXL</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>Hub USB Type-C</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>Casque Gaming Pro X</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>Microphone Studio USB</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Casque Gaming Pro X</td>
+<td>Microphone Studio USB</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Webcam HD Pro</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Clavier Rétroéclairé</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Tapis de Souris XXL</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Hub USB Type-C</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Clavier Rétroéclairé</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Tapis de Souris XXL</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Hub USB Type-C</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>Tapis de Souris XXL</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>Hub USB Type-C</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>Hub USB Type-C</td>
+<td>Peripherals</td>
+</tr>
+</tbody>
+</table>
+
+<p>C2. Listez toutes les combinaisons possibles entre les clients Gold et les produits de la catégorie &quot;Electronics&quot;.</p>
+
+<table>
+<thead>
+<tr>
+<th>client</th>
+<th>product</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Jane Smith</td>
+<td>Tablet Pro</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>Smartphone Pro</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>Gaming Laptop</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>Tablet Pro</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>Smartphone Pro</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>Gaming Laptop</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>Tablet Pro</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>Smartphone Pro</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>Gaming Laptop</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>Tablet Pro</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>Smartphone Pro</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>Gaming Laptop</td>
+</tr>
+</tbody>
+</table>
+
+<p>C3. Affichez toutes les combinaisons possibles de fournisseurs et de catégories de produits.</p>
+
+<table>
+<thead>
+<tr>
+<th>supplier_name</th>
+<th>category</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>BestDevices</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Wearables</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Audio</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Electronics</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Home Automation</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Home Electronics</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Wearables</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_5">D. UNION et UNION ALL</h2>
+
+<p>D1. Créez une liste qui combine :</p>
+
+<ul>
+<li>Les emails des clients (avec le type &#39;Client&#39;)</li>
+<li>Les emails des fournisseurs (avec le type &#39;Fournisseur&#39;)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Email</th>
+<th>Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>contact@devicecenter.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>contact@techcorp.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>hello@techies.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>info@bestdevices.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>info@gadgethouse.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>info@powerup.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>jane.smith@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>john.doe@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>linda.thomas@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>linda.x@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>lisa.brown@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>mark.davis@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>mike.jones@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>paul.green@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>sales@electroworld.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>sara.wilson@example.com</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>service@computehub.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>support@gizmodepot.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>support@retrofun.com</td>
+<td>Fournisseur</td>
+</tr>
+<tr>
+<td>tom.harris@example.com</td>
+<td>Client</td>
+</tr>
+</tbody>
+</table>
+
+<p>D2. Créez une liste qui combine :</p>
+
+<ul>
+<li>Les commandes de plus de 500€ (date et montant)</li>
+<li>Les factures de plus de 500€ (date et montant)</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Montant</th>
+<th>Type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>2023-08-22 09:55:00</td>
+<td>699.99</td>
+<td>Commande</td>
+</tr>
+<tr>
+<td>2023-10-14 09:45:00</td>
+<td>989.99</td>
+<td>Commande</td>
+</tr>
+<tr>
+<td>2023-10-15 14:30:00</td>
+<td>1429.99</td>
+<td>Commande</td>
+</tr>
+<tr>
+<td>2025-01-14 15:21:04</td>
+<td>1429.99</td>
+<td>Facture</td>
+</tr>
+<tr>
+<td>2025-01-14 15:21:04</td>
+<td>989.99</td>
+<td>Facture</td>
+</tr>
+<tr>
+<td>2025-01-14 15:21:04</td>
+<td>699.99</td>
+<td>Facture</td>
+</tr>
+</tbody>
+</table>
+
+<p>D3. Créez une liste qui combine :</p>
+
+<ul>
+<li>Les produits en rupture de stock (stock = 0)</li>
+<li>Les produits jamais commandés</li>
+<li>Les produits sans avis</li>
+</ul>
+
+<p>Pour avoir un résultat, insérez les données :</p>
+
+<table>
+<thead>
+<tr>
+<th>product</th>
+<th>reason</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Casque Gaming Pro X</td>
+<td>Rupture Stock</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Rupture Stock</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Rupture Stock</td>
+</tr>
+<tr>
+<td>Casque Gaming Pro X</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Microphone Studio USB</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>Jamais Commandé</td>
+</tr>
+<tr>
+<td>Casque Gaming Pro X</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Microphone Studio USB</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>Sans Avis</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>Sans Avis</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_6">E. LEFT et RIGHT JOIN (25 minutes)</h2>
+
+<p>E1. Affichez tous les clients et leurs adresses de livraison, même pour les clients sans adresse.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>123 Elm Street, Cityville</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>456 Oak Avenue, Townsville</td>
+</tr>
+<tr>
+<td>Mike Jones</td>
+<td>789 Pine Road, Villageton</td>
+</tr>
+<tr>
+<td>Lisa Brown</td>
+<td>321 Maple Drive, Lakeview</td>
+</tr>
+<tr>
+<td>Paul Green</td>
+<td>654 Cedar Avenue, Hometown</td>
+</tr>
+<tr>
+<td>Amy White</td>
+<td>987 Birch Blvd, Hilltown</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>456 Spruce Street, Valley City</td>
+</tr>
+<tr>
+<td>Sara Wilson</td>
+<td>321 Aspen Way, Riverside</td>
+</tr>
+<tr>
+<td>Tom Harris</td>
+<td>789 Willow Lane, Greenfield</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>456 Fir Avenue, Beachtown</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+
+<p>E2. Pour chaque fournisseur, affichez ses produits, même pour les fournisseurs sans produits.</p>
+
+<table>
+<thead>
+<tr>
+<th>supplier</th>
+<th>product</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>TechCorp</td>
+<td>Gaming Laptop</td>
+</tr>
+<tr>
+<td>TechCorp</td>
+<td>Casque Gaming Pro X</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Smartphone Pro</td>
+</tr>
+<tr>
+<td>GadgetHouse</td>
+<td>Souris Optique 4000dpi</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Retro Console</td>
+</tr>
+<tr>
+<td>RetroFun</td>
+<td>Webcam HD Pro</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Wireless Earbuds</td>
+</tr>
+<tr>
+<td>ElectroWorld</td>
+<td>Microphone Studio USB</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Smartwatch</td>
+</tr>
+<tr>
+<td>PowerUp</td>
+<td>Clavier Rétroéclairé</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Tablet Pro</td>
+</tr>
+<tr>
+<td>ComputeHub</td>
+<td>Tapis de Souris XXL</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>4K TV</td>
+</tr>
+<tr>
+<td>GizmoDepot</td>
+<td>Hub USB Type-C</td>
+</tr>
+<tr>
+<td>DeviceCenter</td>
+<td>Gaming Keyboard</td>
+</tr>
+<tr>
+<td>Techies</td>
+<td>Bluetooth Speaker</td>
+</tr>
+<tr>
+<td>BestDevices</td>
+<td>Smart Home Hub</td>
+</tr>
+</tbody>
+</table>
+
+<p>E3. Pour chaque produit, affichez :</p>
+
+<ul>
+<li>Le nom du produit</li>
+<li><p>Le dernier avis reçu (date et commentaire)
+Incluez les produits sans avis.</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>review_date</th>
+<th>comment</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gaming Laptop</td>
+<td>2025-01-14 15:21:04</td>
+<td>Amazing product, highly recommended!</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>2025-01-14 15:21:04</td>
+<td>Good value for money.</td>
+</tr>
+<tr>
+<td>Retro Console</td>
+<td>2025-01-14 15:21:04</td>
+<td>Classic experience! Love it.</td>
+</tr>
+<tr>
+<td>Wireless Earbuds</td>
+<td>2025-01-14 15:21:04</td>
+<td>Decent sound, could be better.</td>
+</tr>
+<tr>
+<td>Smartwatch</td>
+<td>2025-01-14 15:21:04</td>
+<td>Great features, battery life could be improved.</td>
+</tr>
+<tr>
+<td>Tablet Pro</td>
+<td>2025-01-14 15:21:04</td>
+<td>Perfect for entertainment.</td>
+</tr>
+<tr>
+<td>4K TV</td>
+<td>2025-01-14 15:21:04</td>
+<td>Impressive clarity and colors.</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>2025-01-14 15:21:04</td>
+<td>Keys are a bit stiff, but overall good.</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>2025-01-14 15:21:04</td>
+<td>Great for outdoor use.</td>
+</tr>
+<tr>
+<td>Smart Home Hub</td>
+<td>2025-01-14 15:21:04</td>
+<td>Works flawlessly with all my devices.</td>
+</tr>
+<tr>
+<td>Casque Gaming Pro X</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Webcam HD Pro</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Microphone Studio USB</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>NULL</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="toc_7">F. Self-Join (30 minutes)</h2>
+
+<p>F1. Écrivez une requête qui affiche chaque client et le nom de son manager.</p>
+
+<table>
+<thead>
+<tr>
+<th>client</th>
+<th>manager</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>John Doe</td>
+<td>Jane Smith</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Mike Jones</td>
+<td>Jane Smith</td>
+</tr>
+<tr>
+<td>Lisa Brown</td>
+<td>Jane Smith</td>
+</tr>
+<tr>
+<td>Paul Green</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Amy White</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Sara Wilson</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Tom Harris</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Linda X</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+
+<p>F2. Pour chaque produit, trouvez un autre produit de la même catégorie avec un prix supérieur.</p>
+
+<table>
+<thead>
+<tr>
+<th>product</th>
+<th>price</th>
+<th>other_product</th>
+<th>other_price</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Tablet Pro</td>
+<td>499.99</td>
+<td>Gaming Laptop</td>
+<td>1429.99</td>
+</tr>
+<tr>
+<td>Smartphone Pro</td>
+<td>989.99</td>
+<td>Gaming Laptop</td>
+<td>1429.99</td>
+</tr>
+<tr>
+<td>Tablet Pro</td>
+<td>499.99</td>
+<td>Smartphone Pro</td>
+<td>989.99</td>
+</tr>
+<tr>
+<td>Microphone Studio USB</td>
+<td>129.99</td>
+<td>Wireless Earbuds</td>
+<td>149.99</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>89.99</td>
+<td>Wireless Earbuds</td>
+<td>149.99</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>39.99</td>
+<td>Gaming Keyboard</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>29.99</td>
+<td>Gaming Keyboard</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>49.99</td>
+<td>Gaming Keyboard</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Microphone Studio USB</td>
+<td>129.99</td>
+<td>Casque Gaming Pro X</td>
+<td>149.99</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>89.99</td>
+<td>Casque Gaming Pro X</td>
+<td>149.99</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>39.99</td>
+<td>Souris Optique 4000dpi</td>
+<td>49.99</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>29.99</td>
+<td>Souris Optique 4000dpi</td>
+<td>49.99</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>39.99</td>
+<td>Webcam HD Pro</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>29.99</td>
+<td>Webcam HD Pro</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>Clavier Rétroéclairé</td>
+<td>79.99</td>
+<td>Webcam HD Pro</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>49.99</td>
+<td>Webcam HD Pro</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>Gaming Keyboard</td>
+<td>79.99</td>
+<td>Webcam HD Pro</td>
+<td>89.99</td>
+</tr>
+<tr>
+<td>Bluetooth Speaker</td>
+<td>89.99</td>
+<td>Microphone Studio USB</td>
+<td>129.99</td>
+</tr>
+<tr>
+<td>Hub USB Type-C</td>
+<td>39.99</td>
+<td>Clavier Rétroéclairé</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>29.99</td>
+<td>Clavier Rétroéclairé</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Souris Optique 4000dpi</td>
+<td>49.99</td>
+<td>Clavier Rétroéclairé</td>
+<td>79.99</td>
+</tr>
+<tr>
+<td>Tapis de Souris XXL</td>
+<td>29.99</td>
+<td>Hub USB Type-C</td>
+<td>39.99</td>
+</tr>
+</tbody>
+</table>
+
+<p>F3. Pour chaque client Gold, trouvez un autre client Gold qui a effectué plus de commandes.</p>
+
+<table>
+<thead>
+<tr>
+<th>client_gold</th>
+<th>other<em>client</em>gold</th>
+<th>client_id</th>
+<th>other<em>client</em>id</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Jane Smith</td>
+<td>Mark Davis</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>Linda Thomas</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>Linda X</td>
+<td>2</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>Linda Thomas</td>
+<td>7</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+<td>Linda X</td>
+<td>7</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+<td>Linda X</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_8">G. UPDATE et DELETE (30 minutes)</h2>
+
+<p>G1. Mettez à jour le niveau de fidélité en &#39;Gold&#39; pour tous les clients ayant passé au moins une commande de plus de 1000€.</p>
+
+<div><pre><code class="language-sql">1 row(s) affected Rows matched: 1  Changed: 1  Warnings: 0</code></pre></div>
+
+<p>G2. Supprimez les produits qui n&#39;ont jamais été :
+    - Commandés
+    - Mis en wishlist
+    - Mis dans un panier
+    - Évalués</p>
+
+<div><pre><code class="language-sql">7 row(s) affected</code></pre></div>
+
+<p>G3. Mettez à jour le statut des commandes en &#39;Cancelled&#39; pour toutes les commandes qui :
+    - Ont le statut &#39;Pending&#39;
+    - ET datent de plus de 30 jours
+    - ET n&#39;ont pas de facture associée</p>
+
+<div><pre><code class="language-sql">0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0</code></pre></div>
+
+<p>G4. Supprimez toutes les adresses de livraison non utilisées dans les commandes. Pour tester, insérez une adresse de livraison non utilidée :</p>
+
+<div><pre><code class="language-sql">2 row(s) affected</code></pre></div>
+
+<h3 id="toc_9">H</h3>
+
+<p>H1. Trouvez les clients qui :</p>
+
+<p>`- Ont passé une commande
+- ET ont laissé un avis
+- ET ont créé un ticket support</p>
+
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>John Doe</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+</tr>
+<tr>
+<td>Mike Jones</td>
+</tr>
+<tr>
+<td>Lisa Brown</td>
+</tr>
+<tr>
+<td>Paul Green</td>
+</tr>
+<tr>
+<td>Amy White</td>
+</tr>
+<tr>
+<td>Mark Davis</td>
+</tr>
+<tr>
+<td>Sara Wilson</td>
+</tr>
+<tr>
+<td>Tom Harris</td>
+</tr>
+<tr>
+<td>Linda Thomas</td>
+</tr>
+</tbody>
+</table>
+
+<p>&lt;!---
+H2. Identifiez les produits qui :</p>
+
+<ul>
+<li>Sont dans le panier d&#39;au moins un client</li>
+<li>ET dans la wishlist d&#39;au moins un client</li>
+<li>ET n&#39;ont jamais été commandés</li>
+</ul>
+
+<p>Pas de résultat.
+--- &gt;</p>
+
+
+
+
+</body>
+
+</html>

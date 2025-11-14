@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>TD - Fonctions MySQL</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+  body {
+    padding: 2cm; 
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">TD - Fonctions MySQL</h1>
+
+<h2 id="toc_1">Objectifs pédagogiques</h2>
+
+<ul>
+<li>Maîtriser les fonctions de manipulation de chaînes de caractères</li>
+<li>Comprendre et utiliser les fonctions de date</li>
+<li>Appliquer les fonctions mathématiques dans un contexte e-commerce</li>
+<li>Utiliser les fonctions de sécurité et d&#39;encodage</li>
+<li>Manipuler des expressions régulières</li>
+<li>Combiner différentes fonctions dans des requêtes complexes</li>
+</ul>
+
+<h2 id="toc_2">Prérequis</h2>
+
+<ul>
+<li>Base de données TechnoShopDB installée. Il est conseillé de la reinstaller pour avoir les mêmes résultats montrés dans ce document.</li>
+<li>Connaissances de base en SQL</li>
+<li>Compréhension des jointures SQL</li>
+</ul>
+
+<h2 id="toc_3">Exercices</h2>
+
+<h3 id="toc_4">Partie 1: Fonctions de chaînes et formatage</h3>
+
+<ol>
+<li>Pour tous les produits, affichez le nom en majuscules et créez une description courte qui prend les 20 premiers caractères de la description suivis de &quot;...&quot; si la description est plus longue.</li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">product_name          short_description
+GAMING LAPTOP        High-performance ga...
+SMARTPHONE PRO       Latest model smart...
+RETRO CONSOLE        Classic retro gaming...
+WIRELESS EARBUDS     Noise-cancelling ear...
+SMARTWATCH           Feature-packed smart...
+TABLET PRO           High-resolution tabl...
+4K TV                Ultra HD 4K televisi...
+GAMING KEYBOARD      Mechanical gaming ke...
+BLUETOOTH SPEAKER    Portable Bluetooth s...
+SMART HOME HUB       Smart home device co...
+CASQUE GAMING PRO X  NULL
+SOURIS OPTIQUE 4000DPI NULL
+WEBCAM HD PRO        NULL
+MICROPHONE STUDIO USB NULL
+CLAVIER RÉTROÉCLAIRÉ NULL
+TAPIS DE SOURIS XXL  NULL
+HUB USB TYPE-C      NULL
+</code></pre></div>
+
+<ol>
+<li>Pour chaque client, créez une colonne &quot;full_address&quot; qui combine le nom et l&#39;adresse dans le format :
+&quot;NOM DU CLIENT (première lettre en majuscule, reste en minuscule) - Adresse complète (première lettre de chaque mot en majuscule)&quot;</li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">full_address
+John doe - 123 Street, Cityville
+Jane smith - 456 Avenue, Townsville
+Mike jones - 789 Road, Villageton
+Lisa brown - 321 Drive, Lakeview
+Paul green - 654 Avenue, Hometown
+Amy white - 987 Blvd, Hilltown
+Mark davis - 456 Street, Valley city
+Sara wilson - 321 Way, Riverside
+Tom harris - 789 Lane, Greenfield
+Linda thomas - 456 Avenue, Beachtown
+Linda x - 456 Avenue, X
+</code></pre></div>
+
+<ol>
+<li><p>Pour les adresses e-mail des clients, créez trois colonnes :</p>
+
+<ul>
+<li>Le nom d&#39;utilisateur (partie avant le @)</li>
+<li>Le domaine (partie après le @)</li>
+<li>Un indicateur &#39;VALID&#39; si l&#39;email contient un @ et au moins un point après le @, &#39;INVALID&#39; sinon</li>
+</ul>
+
+<p>Indice pour la regex: 
+- Utilisez &#39;^&#39; pour le début de la chaîne
+- &#39;[A-Za-z0-9._%+-]+&#39; pour la partie avant le @
+- &#39;@&#39; pour le symbole @
+- &#39;[A-Za-z0-9.-]+&#39; pour le domaine
+- &#39;\.&#39; pour le point
+- &#39;[A-Za-z]{2,}$&#39; pour l&#39;extension (.com, .fr, etc.)</p></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">email                     username    domain         validity
+amy.white@example.com    amy.white    example.com    VALID
+jane.smith@example.com   jane.smith   example.com    VALID
+john.doe@example.com     john.doe     example.com    VALID
+linda.thomas@example.com linda.thomas example.com    VALID
+linda.x@example.com      linda.x      example.com    VALID
+lisa.brown@example.com   lisa.brown   example.com    VALID
+mark.davis@example.com   mark.davis   example.com    VALID
+mike.jones@example.com   mike.jones   example.com    VALID
+paul.green@example.com   paul.green   example.com    VALID
+sara.wilson@example.com  sara.wilson  example.com    VALID
+tom.harris@example.com   tom.harris   example.com    VALID</code></pre></div>
+
+<h3 id="toc_5">Partie 2: Fonctions de dates</h3>
+
+<ol>
+<li>Pour chaque commande, affichez :
+
+<ul>
+<li>La date de commande au format &quot;Lundi 01 Janvier 2024&quot;</li>
+<li>Le nombre de jours écoulés depuis la commande</li>
+<li>Une colonne &quot;délai_livraison&quot; qui affiche :
+
+<ul>
+<li>&quot;Express&quot; si la commande date de moins de 2 jours</li>
+<li>&quot;Standard&quot; si la commande date de 2 à 5 jours</li>
+<li>&quot;Retardée&quot; si la commande date de plus de 5 jours</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">order_id   formatted_date       days_since_order    delay
+1        Sunday 15 October 2023      479           Retardée
+2        Saturday 14 October 2023    480           Retardée
+3        Sunday 10 September 2023    514           Retardée
+4        Friday 20 October 2023      474           Retardée
+5        Wednesday 11 October 2023   483           Retardée
+6        Tuesday 12 September 2023   512           Retardée
+7        Tuesday 22 August 2023      533           Retardée
+8        Monday 10 July 2023         576           Retardée
+9        Saturday 21 October 2023    473           Retardée
+10       Sunday 10 September 2023    514           Retardée</code></pre></div>
+
+<ol>
+<li>Pour chaque client, affichez :
+
+<ul>
+<li>La date de dernière visite au format &quot;MM/DD/YYYY HH:mm&quot;</li>
+<li>Une colonne indiquant si la dernière visite était en matinée (AM) ou après-midi (PM)</li>
+<li>Le nombre de mois depuis la création du compte</li>
+<li>Une colonne &quot;statut_activité&quot; qui indique :
+
+<ul>
+<li>&quot;Actif récent&quot; si dernière visite &lt; 30 jours</li>
+<li>&quot;Actif&quot; si dernière visite &lt; 90 jours</li>
+<li>&quot;Inactif&quot; si dernière visite &gt; 90 jours ou NULL</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">last_visit_formatted    period    months_since_creation    
+John Doe       09/15/2023 12:45    PM    0    Inactif
+Jane Smith     10/01/2023 14:10    PM    0    Inactif
+Mike Jones     08/22/2023 09:00    AM    0    Inactif
+Lisa Brown     07/19/2023 16:25    PM    0    Inactif
+Paul Green     06/25/2023 11:40    AM    0    Inactif
+Amy White      05/13/2023 17:55    PM    0    Inactif
+Mark Davis     04/20/2023 18:05    PM    0    Inactif
+Sara Wilson    09/10/2023 15:00    PM    0    Inactif
+Tom Harris     10/11/2023 13:30    PM    0    Inactif
+Linda Thomas   10/15/2023 12:10    PM    0    Inactif
+Linda X             NULL          NULL   0    Inactif</code></pre></div>
+
+<h3 id="toc_6">Partie 3: Fonctions mathématiques et commerciales</h3>
+
+<ol>
+<li>Pour chaque produit du catalogue, calculez :
+
+<ul>
+<li>Le prix TTC (prix * 1.2) arrondi à 2 décimales</li>
+<li>Le prix en promotion (-15%) arrondi à l&#39;entier inférieur</li>
+<li>Une marge théorique de 30% sur le prix HT, arrondie à l&#39;entier supérieur</li>
+<li>Un prix psychologique (prix TTC arrondi à l&#39;entier inférieur se terminant par 99)</li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">name                price_ttc price_promà  margin   prix_psychologique
+Gaming Laptop         1715.99    1215       1859     1714.99
+Smartphone Pro        1187.99     841       1287     1186.99
+Retro Console         263.99      186       286      262.99
+Wireless Earbuds      179.99      127       195      178.99
+Smartwatch            299.99      212       325      298.99
+Tablet Pro            599.99      424       650      598.99
+4K TV                 839.99      594       910      838.99
+Gaming Keyboard       95.99       67        104      94.99
+Bluetooth Speaker     107.99       76       117      106.99
+Smart Home Hub        155.99      110       169      154.99
+Casque Gaming Pro X   179.99      127       195      178.99
+Souris Optique 4000   59.99       42        65       58.99
+Webcam HD Pro         107.99       76       117      106.99
+Microphone Studio     155.99      110       169      154.99
+Clavier Rétroéclairé  95.99       67        104      94.99
+Tapis de Souris XXL   35.99       25        39       34.99
+Hub USB Type-C        47.99       33        52       46.99</code></pre></div>
+
+<ol>
+<li>Créez une requête qui génère des codes promo uniques pour chaque produit :
+
+<ul>
+<li>Première lettre du nom du produit en majuscule</li>
+<li>3 chiffres aléatoires entre 100 et 999</li>
+<li>Dernière lettre du nom de la catégorie en majuscule
+Example: &quot;G123S&quot; pour &quot;Gaming Laptop&quot; dans &quot;Electronics&quot;</li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">name                     promo_code
+Gaming Laptop              G308S
+Smartphone Pro             S861S
+Retro Console              R587G
+Wireless Earbuds           W250O
+Smartwatch                 S290S
+Tablet Pro                 T600S
+4K TV                      4232S
+Gaming Keyboard            G161S
+Bluetooth Speaker          B909O
+Smart Home Hub             S368N
+Casque Gaming Pro X        C808O
+Souris Optique 4000dpi     S140S
+Webcam HD Pro              W873S
+Microphone Studio USB      M249O
+Clavier Rétroéclairé       C325S
+Tapis de Souris XXL        T779S
+Hub USB Type-C             H124S</code></pre></div>
+
+<h3 id="toc_7">Partie 4: Sécurité et encodage</h3>
+
+<ol>
+<li>Pour la table customers, créez une requête qui :
+
+<ul>
+<li>Encode l&#39;email en Base64</li>
+<li>Crée un hash SHA-2 de la combinaison email + date_created</li>
+<li>Génère un &quot;security_token&quot; qui combine :
+
+<ul>
+<li>Les 5 premiers caractères du hash de l&#39;email</li>
+<li>Un tiret</li>
+<li>L&#39;ID du client encodé en base64</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">customer_id     encoded_email                    secure_hash                                              security_token        
+1    am9obi5kb2VAZXhhbXBsZS5jb20=              3736b32206e82e28d7cb6d06eaf01b003005a7428cd1f73cd8c09d79c86ed0c4    836f8-MQ==
+2    amFuZS5zbWl0aEBleGFtcGxlLmNvbQ==          b52eb70c12e7c2101301e8ad227c64bd1bb5590eb61b513806f1b537cd2bff9e    f2d1f-Mg==
+3    bWlrZS5qb25lc0BleGFtcGxlLmNvbQ==          0d1366726d1c57540472b13f93c9da8b4df895508f5c7a037d71d8f319985ffa    35ea0-Mw==
+4    bGlzYS5icm93bkBleGFtcGxlLmNvbQ==          f014a1eb7a367dcbbd57b7fcfd2b396368325493e2647847bfac1d57ba75a1ec    28fc2-NA==
+5    cGF1bC5ncmVlbkBleGFtcGxlLmNvbQ==          034628a338f5e8d04ee6f804669fdfe50e00b37b6b4dc01bfd1ef68b2f56e3d2    9bd4c-NQ==
+6    YW15LndoaXRlQGV4YW1wbGUuY29t              ae690502f155b13635fda92e5d3bc80c2fffcf92843c96e6abe9fb14fa54f404    88348-Ng==
+7    bWFyay5kYXZpc0BleGFtcGxlLmNvbQ==          92dd7d34f482f24394ec2c20ecec82333e0c7238cc220eddc91b79ca2522a9ba    c9754-Nw==
+8    c2FyYS53aWxzb25AZXhhbXBsZS5jb20=          a5c475b32d52c04ae5182234865b0c80b4b1575a84bfc6852236bfc783d0bd04    629ec-OA==
+9    dG9tLmhhcnJpc0BleGFtcGxlLmNvbQ==          f7b24accd4c22091e4c470e08aa26847021725e5605ba0119db11acba78d61de    9e363-OQ==
+10   bGluZGEudGhvbWFzQGV4YW1wbGUuY29t          d94bfc7efeda67cf3ea8d4f1702902c7586850d18750e71e2db091797b32a5bb    d84ff-MTA=
+11   bGluZGEueEBleGFtcGxlLmNvbQ==              cce071b3f28f1b6f10548a324543e726a9cedcdfd523f50fd20bfc95b754e8fa    6d4c7-MTE=
+</code></pre></div>
+
+<h3 id="toc_8">Partie 5: Expressions régulières et validation</h3>
+
+<ol>
+<li>Insérez le client ci-dessous :</li>
+</ol>
+
+<div><pre><code class="language-sql">INSERT INTO customers (email, name, address, loyalty_level, last_visit, active)
+VALUES
+(&#39;jane@example&#39;, &#39;Jane12&#39;, &#39;Elm Street, Cityville, 123&#39;, &#39;Silver&#39;, &#39;2023-09-15 12:45:00&#39;, TRUE);</code></pre></div>
+
+<p>Créez une requête qui valide les données clients :</p>
+
+<ul>
+<li>Vérifiez que l&#39;email respecte le format standard (utilisez REGEXP avec les indices donnés plus haut)</li>
+<li>Vérifiez que l&#39;adresse commence par un numéro (indice: &#39;^[0-9]&#39;)</li>
+<li>Vérifiez que le nom ne contient pas de chiffres (indice: &#39;[0-9]&#39;)</li>
+</ul>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">name                         email                             address                   email_status    address_status    name_status
+John Doe                    john.doe@example.com          123 Elm Street, Cityville           Valid Email    Valid Address    Valid Name
+Jane Smith                  jane.smith@example.com        456 Oak Avenue, Townsville          Valid Email    Valid Address    Valid Name
+Mike Jones                  mike.jones@example.com        789 Pine Road, Villageton          Valid Email    Valid Address    Valid Name
+Lisa Brown                  lisa.brown@example.com        321 Maple Drive, Lakeview          Valid Email    Valid Address    Valid Name
+Paul Green                  paul.green@example.com        654 Cedar Avenue, Hometown          Valid Email    Valid Address    Valid Name
+Amy White                   amy.white@example.com         987 Birch Blvd, Hilltown          Valid Email    Valid Address    Valid Name
+Mark Davis                  mark.davis@example.com        456 Spruce Street, Valley City     Valid Email    Valid Address    Valid Name
+Sara Wilson                 sara.wilson@example.com       321 Aspen Way, Riverside           Valid Email    Valid Address    Valid Name
+Tom Harris                  tom.harris@example.com        789 Willow Lane, Greenfield        Valid Email    Valid Address    Valid Name
+Linda Thomas                linda.thomas@example.com      456 Fir Avenue, Beachtown          Valid Email    Valid Address    Valid Name
+Linda X                     linda.x@example.com           456 Fir Avenue, X                  Valid Email    Valid Address    Valid Name
+Jane12                      jane@example                  Elm Street, Cityville, 123         Invalid Email  Invalid Address  Invalid Name</code></pre></div>
+
+<ol>
+<li>Pour les descriptions des trois premiers produits par ordre alphabetique:
+
+<ul>
+<li>Extrayez tous les nombres qui y figurent</li>
+<li>Comptez le nombre de mots</li>
+<li>Indiquez si la description contient des caractères spéciaux (hors alphanumériques et ponctuation basique). Utilizé &#39;[^a-zA-Z0-9 .,!?-]&#39;</li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">name            numbers_only    word_count    special_chars_check
+4K TV                       4        4        No Special Chars
+Bluetooth Speaker                    3        No Special Chars  
+Casque Gaming Pro X         NULL      NULL     No Special Chars</code></pre></div>
+
+<h3 id="toc_9">Partie 6: Challenge - Requête complexe</h3>
+
+<ol>
+<li>Créez une requête qui combine plusieurs types de fonctions pour générer un rapport de commande :
+
+<ul>
+<li>Nom du client (formaté Première lettre majuscule)</li>
+<li>Date de commande (format personnalisé)</li>
+<li>Produits commandés (nom en majuscules)</li>
+<li>Prix total (avec fonctions mathématiques)</li>
+<li>Un code de suivi unique combinant :
+
+<ul>
+<li>Initiales du client</li>
+<li>Timestamp de la commande encodé</li>
+<li>3 caractères aléatoires</li>
+</ul></li>
+<li>Statut de livraison basé sur la date</li>
+</ul></li>
+</ol>
+
+<p>Résultat attendu :</p>
+
+<div><pre><code class="language-none">customer_name    order_date                              product_name           total_ttc    tracking_code         status
+
+John doe             Sunday 15 October 2023 à 14:30      GAMING LAPTOP       1715.99    JeMTY5NzM3MzAwMA==67e    Livré
+Jane smith            Saturday 14 October 2023 à 09:45    SMARTPHONE PRO       1187.99    JhMTY5NzI2OTUwMA==ea9    Livré
+Mike jones           Sunday 10 September 2023 à 16:15    RETRO CONSOLE        263.99     MsMTY5NDM1NTMwMA==bbc    Livré
+Lisa brown           Friday 20 October 2023 à 11:10      WIRELESS EARBUDS     179.99     LnMTY5Nzc5MzAwMA==b06    Livré
+Paul green           Wednesday 11 October 2023 à 13:25    SMARTWATCH           299.99     PnMTY5NzAyMzUwMA==c80    Livré
+Amy white            Tuesday 12 September 2023 à 12:00    TABLET PRO           599.99     AeMTY5NDUxMjgwMA==1d0    Livré
+Mark davis           Tuesday 22 August 2023 à 09:55      4K TV                839.99     MsMTY5MjY5MDkwMA==5c8    Livré
+Sara wilson          Monday 10 July 2023 à 10:45        GAMING KEYBOARD       95.99     SnMTY4ODk3ODcwMA==fb2    Livré
+Tom harris           Saturday 21 October 2023 à 12:35    BLUETOOTH SPEAKER    107.99     TsMTY5Nzg4NDUwMA==2ae    Livré
+Linda thomas         Sunday 10 September 2023 à 15:15    SMART HOME HUB       155.99     LsMTY5NDM1MTcwMA==8a5    Livré
+</code></pre></div>
+
+
+
+
+</body>
+
+</html>
